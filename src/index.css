@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000112;
+  font-family: "Space Grotesk";
+  color: white;
+}
+
+/* Robot.jsx */
+.pupil {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #4d06dc 50%, #5189e2fd 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.pupil::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #00926e 30%, #019d80 70%, #00e2a2 100%);
+}
+
+.pupil::before {
+  content: "";
+  top: 2px;
+  left: 5px;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(1px);
+}
+
+.eye::before {
+  content: "";
+  background-color: #222;
+  transition: all 0.3s ease;
+}
+
+.eye.blink::before {
+  top: 0;
+  bottom: 0;
+}
+
+/* Pill.jsx */
+
+.pill-container {
+  animation: pill-spin 4s linear infinite;
+  transform: rotate(180deg);
+}
+
+@keyframes pill-spin {
+  100% {
+    transform: rotate(-540deg);
+  }
+}
+
+.pill-bottom {
+  transition: margin-top 1.2s ease-in-out;
+}
+
+.pill-bottom.open {
+  margin-top: 4vmin;
+}
+
+@keyframes pill-shine {
+  0%,
+  46% {
+    right: 1.5vmin;
+  }
+  54%,
+  100% {
+    right: 7.5vmin;
+  }
+}
+
+.animate-medicine-dust {
+  animation: pill-dust 1.75s ease infinite alternate;
+}
+
+@keyframes pill-dust {
+  0%,
+  100% {
+    transform: translate3d(0, 0, -0.1vmin);
+  }
+  25% {
+    transform: translate3d(0.2vmin, 2vmin, 0);
+  }
+  75% {
+    transform: translate3d(-0.1vmin, -2vmin, 0.25vmin);
+  }
+}
+
+/* Projects */
+@layer utilities {
+  .clip-path-polygon {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .ease-custom {
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .hover\:shadow-blue:hover {
+    box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
+  }
+  .hover\:shadow-gray:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* slider */
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spinrevert {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.prevent-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* About.jsx */
+.octagon-mask {
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+}
