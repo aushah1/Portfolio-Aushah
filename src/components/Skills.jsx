@@ -99,7 +99,7 @@ const Skills = () => {
         <div id="center" className="relative w-full h-[790px] ">
           <div className="content absolute top-0 left-0 w-full h-full flex flex-col gap-10 items-center justify-center text-white translate-y-full">
             <FuzzyText
-              className="fuzzyText"
+              className="fuzzyText "
               baseIntensity={0.2}
               hoverIntensity={0.4}
               enableHover={0.4}>

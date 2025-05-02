@@ -26,7 +26,7 @@ const About = () => {
       }}>
       {/* Left Column */}
       <motion.div
-        className="intro flex flex-col gap-6"
+        className="intro flex flex-col gap-6 mt-10"
         variants={{
           hidden: { x: -100, opacity: 0 },
           visible: {
@@ -35,16 +35,6 @@ const About = () => {
             transition: { type: "spring", stiffness: 50 },
           },
         }}>
-        <motion.div className="overflow-hidden" whileHover={{ scale: 1.05 }}>
-          <RotatingText
-            texts={["WEB DEVELOPER", "REACT DEVELOPER", "FULLSTACK DEVELOPER"]}
-            mainClassName="text-5xl bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent"
-            staggerFrom="last"
-            staggerDuration={0.02}
-            transition={{ type: "spring", damping: 20, stiffness: 200 }}
-          />
-        </motion.div>
-
         <motion.h1
           className="text-5xl font-bold"
           variants={{
@@ -53,6 +43,16 @@ const About = () => {
           }}>
           HEY, I'M
         </motion.h1>
+
+        <motion.div className="overflow-hidden" whileHover={{ scale: 1.05 }}>
+          <RotatingText
+            texts={["WEB DEVELOPER", "REACT DEVELOPER", "FRONTEND DEVELOPER"]}
+            mainClassName="text-5xl bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text "
+            staggerFrom="last"
+            staggerDuration={0.02}
+            transition={{ type: "spring", damping: 20, stiffness: 200 }}
+          />
+        </motion.div>
 
         <motion.div className="relative" whileHover={{ scale: 1.02 }}>
           <Name
