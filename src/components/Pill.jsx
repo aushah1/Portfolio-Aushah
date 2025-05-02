@@ -99,9 +99,9 @@ const Pill = ({ link, img, hoverEffect, ...props }) => {
           </div>
 
           {/* Pill Sections */}
-          <div className="pill-top w-8 h-9 bg-[#171717] border-2 border-white relative rounded-t-[6vmin] overflow-hidden" />
+          <div className="pill-top w-8 h-9 md:w-9 md:h-10 bg-[#171717] border-2 border-white relative rounded-t-[6vmin] overflow-hidden" />
           <div
-            className={`pill-bottom w-8 h-9 bg-[#171717] border-2 border-white mt-0 rounded-b-[6vmin] relative ${
+            className={`pill-bottom w-8 h-9 md:w-9 md:h-10 bg-[#171717] border-2 border-white mt-0 rounded-b-[6vmin] relative ${
               isOpen ? "open" : ""
             }`}
           />

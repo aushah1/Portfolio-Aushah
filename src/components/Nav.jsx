@@ -46,6 +46,52 @@ export const Nav = ({ navItems, className }) => {
       }
     }
   });
+  const menuVariants = {
+    open: {
+      scaleY: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 22,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+    closed: {
+      scaleY: 0,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+        staggerChildren: 0.1,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300, velocity: -100 },
+    },
+    closed: {
+      opacity: 0,
+      y: -20,
+      transition: { duration: 0.2 },
+    },
+  };
+
+  const buttonVariants = {
+    open: {
+      rotate: 360,
+      transition: { type: "spring", stiffness: 300 },
+    },
+    closed: {
+      rotate: 0,
+      transition: { type: "spring", stiffness: 300 },
+    },
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -127,39 +173,34 @@ export const Nav = ({ navItems, className }) => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="sm:hidden p-2 text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
+        <motion.button
+          className="sm:hidden p-2 text-white relative z-50"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          variants={buttonVariants}
+          animate={isMenuOpen ? "open" : "closed"}>
+          <motion.svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <motion.path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+              initial={false}
+              animate={isMenuOpen ? "open" : "closed"}
+              variants={{
+                closed: { d: "M4 6h16M4 12h16M4 18h16" },
+                open: {
+                  d: "M6 18L18 6M6 6l12 12",
+                  transition: { duration: 0.2 },
+                },
+              }}
+            />
+          </motion.svg>
+        </motion.button>
       </motion.div>
 
       {/* Mobile Menu Overlay */}
@@ -167,27 +208,56 @@ export const Nav = ({ navItems, className }) => {
         {isMenuOpen && (
           <motion.div
             key="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed left-1/2 -translate-x-1/2 top-24 bg-black/50 backdrop-blur-sm rounded-lg p-4 space-y-4 z-[5000]">
-            {navItems.map((navItem, idx) => {
-              const isActive = currentPath === navItem.link;
-              return (
-                <motion.a
-                  key={`mobile-link-${idx}`}
-                  href={navItem.link}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={cn(
-                    "text-white block text-center text-lg",
-                    isActive ? "text-blue-400" : ""
-                  )}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}>
-                  {navItem.name}
-                </motion.a>
-              );
-            })}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="fixed inset-0 bg-black/80 backdrop-blur-lg pt-24 z-[4999] origin-top"
+            style={{ pointerEvents: isMenuOpen ? "auto" : "none" }}>
+            <motion.div className="container mx-auto px-4">
+              <motion.div
+                className="flex flex-col items-center space-y-6 bg-gradient-to-br from-black/60 to-black/30 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/10"
+                variants={{
+                  open: {
+                    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+                  },
+                  closed: {
+                    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+                  },
+                }}>
+                {navItems.map((navItem, idx) => {
+                  const isActive = currentPath === navItem.link;
+                  return (
+                    <motion.a
+                      key={`mobile-link-${idx}`}
+                      href={navItem.link}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={cn(
+                        "text-2xl font-medium w-full text-center py-4 rounded-xl",
+                        isActive
+                          ? "text-blue-400 bg-white/5"
+                          : "text-white hover:bg-white/5"
+                      )}
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}>
+                      {navItem.name}
+                      {isActive && (
+                        <motion.div
+                          className="absolute inset-0 border-2 border-blue-400 rounded-xl"
+                          layoutId="mobile-active-border"
+                          transition={{
+                            type: "spring",
+                            bounce: 0.2,
+                            duration: 0.5,
+                          }}
+                        />
+                      )}
+                    </motion.a>
+                  );
+                })}
+              </motion.div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
