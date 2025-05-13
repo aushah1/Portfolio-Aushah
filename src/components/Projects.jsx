@@ -108,6 +108,44 @@ const Projects = () => {
       }
     });
   };
+  const projectsData = [
+    {
+      image: "project1.png",
+      name: "Netflix Clone",
+      description: "A UI clone of Netflix built using React.",
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      image: "project2.png",
+      name: "Solstice",
+      description: "A music player build using plain HTML , CSS and JavaScript",
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      image: "project3.png",
+      name: "Sidcup Family Golf Clone",
+      description: "A web clone of Sidcup Family Golf's official website.",
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      image: "project4.png",
+      name: "ShopSphere",
+      description: "A mobile-friendly shopping app built with React.",
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      image: "project5.png",
+      name: "Twitter Clone",
+      description: "A Twitter-inspired social media platform.",
+      demoLink: "#",
+      githubLink: "#",
+    },
+  ];
+
   return (
     <>
       <section
@@ -136,26 +174,46 @@ const Projects = () => {
           </div>
         </div>
         <div className="cards absolute lg:top-[10%] top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[600px] will-change-transform">
-          {[1, 2, 3, 4, 5].map((_, i) => (
+          {projectsData.map((project, i) => (
             <div
               key={i}
-              className="card absolute w-[400px] h-[300px] sm:w-[600px] sm:h-[400px] lg:w-[741px] lg:h-[550px] top-[60%] left-1/2 -translate-x-[250px] flex flex-col justify-center items-center gap-4 will-change-transform ">
+              className="card absolute w-[400px] h-[300px] sm:w-[600px] sm:h-[400px] lg:w-[741px] lg:h-[550px] top-[60%] left-1/2 -translate-x-[250px] flex flex-col justify-center items-center gap-4 will-change-transform">
               <div className="card-img outline outline-1 outline-white outline-offset-[10px] relative overflow-hidden rounded-lg  group">
                 <img
-                  src={`project${i + 1}.png`}
-                  alt="Project"
-                  className="w-full h-full  object-cover transition-all duration-500 ease-custom rounded-xl"
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-full object-cover transition-all duration-500 ease-custom rounded-xl"
                 />
-                <div className="card-overlay absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="button-container flex gap-6 p-5">
+                <div className="card-overlay hidden absolute inset-0 lg:flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="button-container flex flex-col gap-2 items-center p-5 text-center">
+                    <div className="flex gap-6 mt-3">
+                      <a
+                        href={project.demoLink}
+                        className="demo-btn px-6 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:scale-105 hover:shadow-blue">
+                        View Site
+                      </a>
+                      <a
+                        href={project.githubLink}
+                        className="github-btn px-6 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:scale-105 hover:shadow-blue">
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="details flex text-white flex-col gap-5 justify-center items-center">
+                <h3 className="text-white text-xl font-bold">{project.name}</h3>
+                <p className="text-sm text-gray-300">{project.description}</p>
+                <div className="button-container flex flex-col gap-2 items-center lg:hidden ">
+                  <div className="flex gap-6 mt-3">
                     <a
-                      href="#"
-                      className="demo-btn px-6 py-4 rounded-full font-semibold text-; backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:scale-105 hover:shadow-blue">
+                      href={project.demoLink}
+                      className="demo-btn px-10 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400  hover:scale-105 hover:shadow-blue">
                       View Site
                     </a>
                     <a
-                      href="#"
-                      className="github-btn px-6 py-4 rounded-full font-semibold text-; backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:scale-105 hover:shadow-blue">
+                      href={project.githubLink}
+                      className="github-btn px-10 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400  hover:scale-105 hover:shadow-blue">
                       GitHub
                     </a>
                   </div>
