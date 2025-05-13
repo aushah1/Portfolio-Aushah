@@ -6,7 +6,6 @@ import Lenis from "@studio-freight/lenis";
 const Projects = () => {
   const stickySectionRef = useRef(null);
   const countContainerRef = useRef(null);
-  const cardsRef = useRef([]);
   const lenisRef = useRef(null);
   const observerRef = useRef(null);
 
@@ -21,7 +20,7 @@ const Projects = () => {
     });
     gsap.ticker.lagSmoothing(0);
 
-    let totalCards = 5; // total number of cards
+    let totalCards = 5;
     const stickyHeight = window.innerHeight * (totalCards + 2);
     const cards = Array.from(document.querySelectorAll(".card"));
 
@@ -46,11 +45,9 @@ const Projects = () => {
 
     cards.forEach((card) => observerRef.current.observe(card));
 
-    // Handle resize
     const resizeHandler = () => positionCards(0);
     window.addEventListener("resize", resizeHandler);
 
-    // Cleanup
     return () => {
       scrollTrigger.kill();
       observerRef.current.disconnect();
@@ -61,7 +58,7 @@ const Projects = () => {
   }, []);
 
   const getRadius = () => {
-    if (window.innerWidth < 768) return window.innerWidth * 8.5;
+    if (window.innerWidth < 768) return window.innerWidth * 6.5;
     if (window.innerWidth < 1200) return window.innerWidth * 3.5;
     return window.innerWidth * 3.5;
   };
@@ -69,9 +66,16 @@ const Projects = () => {
   const positionCards = (progress = 0) => {
     const totalCards = document.querySelectorAll(".card").length;
     const radius = getRadius();
-    const arcAngle = window.innerWidth >= 1200 ? Math.PI * 0.3 : Math.PI * 0.4;
+    let arcAngle;
+    if (window.innerWidth >= 1200) {
+      arcAngle = Math.PI * 0.4;
+    } else if (window.innerWidth < 768) {
+      arcAngle = Math.PI * 0.35; // Tighter angle for mobile
+    } else {
+      arcAngle = Math.PI * 0.4;
+    }
     const startAngle = Math.PI / 2 - arcAngle / 2;
-    const totalTravel = 1 + totalCards / 5; // Adjusted for better progression
+    const totalTravel = 1 + totalCards / 5;
     const adjustedProgress = (progress * totalTravel - 1) * 0.75;
 
     document.querySelectorAll(".card").forEach((card, i) => {
@@ -108,124 +112,137 @@ const Projects = () => {
       }
     });
   };
+
   const projectsData = [
     {
       image: "project1.png",
       name: "Netflix Clone",
       description: "A UI clone of Netflix built using React.",
-      demoLink: "#",
-      githubLink: "#",
+      demoLink: "https://aushah1.github.io/Netflix-clone/",
+      githubLink: "https://github.com/aushah1/Netflix-clone.git",
     },
     {
       image: "project2.png",
       name: "Solstice",
-      description: "A music player build using plain HTML , CSS and JavaScript",
+      description: "A music player built using plain HTML, CSS and JavaScript",
       demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/aushah1/Solstice.git",
     },
     {
       image: "project3.png",
       name: "Sidcup Family Golf Clone",
       description: "A web clone of Sidcup Family Golf's official website.",
-      demoLink: "#",
-      githubLink: "#",
+      demoLink: "https://aushah1.github.io/Sidcup-Family-Golf-Clone/",
+      githubLink: "https://github.com/aushah1/Sidcup-Family-Golf-Clone.git",
     },
     {
       image: "project4.png",
       name: "ShopSphere",
-      description: "A mobile-friendly shopping app built with React.",
+      description: "An e-commerce platform with cart and product pages.",
       demoLink: "#",
-      githubLink: "#",
+      githubLink: "https://github.com/aushah1/ShopSphere.git",
     },
     {
       image: "project5.png",
       name: "Twitter Clone",
       description: "A Twitter-inspired social media platform.",
-      demoLink: "#",
-      githubLink: "#",
+      demoLink: "https://aushah1.github.io/Twitter-Clone/",
+      githubLink: "https://github.com/aushah1/Twitter-Clone.git",
     },
   ];
 
   return (
-    <>
-      <section
-        id="projects"
-        className="steps relative w-full h-screen overflow-hidden"
-        ref={stickySectionRef}>
-        <div className="step-counter absolute flex flex-col my-8 mx-3 md:mx-8">
-          <div className="counter-title relative w-[1200px] h-[150px] clip-path-polygon overflow-hidden">
-            <h1 className="relative text-white uppercase font-black text-[80px] md:text-[150px] leading-none tracking-tighter will-change-transform">
-              Project
+    <section
+      id="projects"
+      className="steps relative w-full h-screen overflow-hidden"
+      ref={stickySectionRef}>
+      <div className="step-counter absolute flex flex-col my-8 mx-3 md:mx-8">
+        <div className="counter-title relative w-[1200px] h-[150px] clip-path-polygon overflow-hidden">
+          <h1 className="relative text-white uppercase font-black text-[80px] md:text-[150px] leading-none tracking-tighter will-change-transform">
+            Project
+          </h1>
+        </div>
+        <div className="count relative top-0 w-[1200px] h-[150px] clip-path-polygon overflow-hidden">
+          <div className="count-container relative" ref={countContainerRef}>
+            <h1 className="empty h-[150px] flex items-center text-white uppercase font-black text-[150px] leading-none tracking-tighter opacity-50">
+              00
             </h1>
-          </div>
-          <div className="count relative top-0 w-[1200px] h-[150px] clip-path-polygon overflow-hidden">
-            <div className="count-container relative" ref={countContainerRef}>
-              <h1 className="empty h-[150px] flex items-center text-white uppercase font-black text-[150px] leading-none tracking-tighter opacity-50">
-                00
+            {[1, 2, 3, 4, 5].map((num) => (
+              <h1
+                key={num}
+                className="h-[150px] flex items-center text-white uppercase font-black text-[150px] leading-none tracking-tighter">
+                {num.toString().padStart(2, "0")}
               </h1>
-              {[1, 2, 3, 4, 5].map((num) => (
-                <h1
-                  key={num}
-                  className="h-[150px] flex items-center text-white uppercase font-black text-[150px] leading-none tracking-tighter">
-                  {num.toString().padStart(2, "0")}
-                </h1>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
-        <div className="cards absolute lg:top-[10%] top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[600px] will-change-transform">
-          {projectsData.map((project, i) => (
-            <div
-              key={i}
-              className="card absolute w-[400px] h-[300px] sm:w-[600px] sm:h-[400px] lg:w-[741px] lg:h-[550px] top-[60%] left-1/2 -translate-x-[250px] flex flex-col justify-center items-center gap-4 will-change-transform">
-              <div className="card-img outline outline-1 outline-white outline-offset-[10px] relative overflow-hidden rounded-lg  group">
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-full object-cover transition-all duration-500 ease-custom rounded-xl"
-                />
-                <div className="card-overlay hidden absolute inset-0 lg:flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="button-container flex flex-col gap-2 items-center p-5 text-center">
-                    <div className="flex gap-6 mt-3">
+      </div>
+
+      <div className="cards absolute lg:top-[10%] top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[600px] will-change-transform">
+        {projectsData.map((project, i) => (
+          <div
+            key={i}
+            className="card absolute w-[450px] h-[350px] sm:w-[600px] sm:h-[400px] lg:w-[741px] lg:h-[550px] md:w-[650px] md:h-[480px] top-[60%] left-1/2 -translate-x-[250px] flex flex-col justify-center items-center gap-4 will-change-transform">
+            <div className="card-img outline outline-1 outline-white outline-offset-[10px] relative overflow-hidden rounded-lg group">
+              <img
+                src={project.image}
+                alt={project.name}
+                className="w-full h-full object-cover transition-all duration-500 ease-custom rounded-xl"
+              />
+              <div className="card-overlay hidden absolute inset-0 lg:flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="button-container flex flex-col gap-2 items-center p-5 text-center">
+                  <div className="flex gap-6 mt-3">
+                    {project.demoLink && project.demoLink !== "#" ? (
                       <a
                         href={project.demoLink}
                         className="demo-btn px-6 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:scale-105 hover:shadow-blue">
                         View Site
                       </a>
-                      <a
-                        href={project.githubLink}
-                        className="github-btn px-6 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:scale-105 hover:shadow-blue">
-                        GitHub
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="details flex text-white flex-col gap-5 justify-center items-center">
-                <h3 className="text-white text-xl font-bold">{project.name}</h3>
-                <p className="text-sm text-gray-300">{project.description}</p>
-                <div className="button-container flex flex-col gap-2 items-center lg:hidden ">
-                  <div className="flex gap-6 mt-3">
-                    <a
-                      href={project.demoLink}
-                      className="demo-btn px-10 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400  hover:scale-105 hover:shadow-blue">
-                      View Site
-                    </a>
+                    ) : (
+                      <span className="text-sm px-6 py-4 rounded-full font-semibold text-white border-2 border-slate-700 bg-black/30 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100">
+                        No Live Demo
+                      </span>
+                    )}
                     <a
                       href={project.githubLink}
-                      className="github-btn px-10 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400  hover:scale-105 hover:shadow-blue">
+                      className="github-btn px-6 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:scale-105 hover:shadow-blue">
                       GitHub
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
-          <div className="card-empty"></div>
-          <div className="card-empty"></div>
-        </div>
-      </section>
-    </>
+
+            <div className="details flex text-white flex-col gap-5 justify-center items-center">
+              <h3 className="text-white text-xl font-bold">{project.name}</h3>
+              <p className="text-sm text-gray-300">{project.description}</p>
+              <div className="button-container flex flex-col gap-2 items-center lg:hidden ">
+                <div className="flex gap-6 mt-3">
+                  {project.demoLink && project.demoLink !== "#" ? (
+                    <a
+                      href={project.demoLink}
+                      className="demo-btn px-10 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 hover:scale-105 hover:shadow-blue">
+                      View Site
+                    </a>
+                  ) : (
+                    <span className="text-sm px-10 py-4 rounded-full font-semibold text-white border-2 border-slate-700 bg-black/30">
+                      No Live Demo
+                    </span>
+                  )}
+                  <a
+                    href={project.githubLink}
+                    className="github-btn px-10 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 hover:scale-105 hover:shadow-blue">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        <div className="card-empty"></div>
+        <div className="card-empty"></div>
+      </div>
+    </section>
   );
 };
 
