@@ -116,10 +116,11 @@ const Projects = () => {
   const projectsData = [
     {
       image: "project1.png",
-      name: "Netflix Clone",
-      description: "A UI clone of Netflix built using React.",
-      demoLink: "https://aushah1.github.io/Netflix-clone/",
-      githubLink: "https://github.com/aushah1/Netflix-clone.git",
+      name: "patreon website",
+      description:
+        "FundAura is a Patreon-based platform I created to connect with supporters.",
+      demoLink: "#",
+      githubLink: "https://github.com/aushah1/FundAura",
     },
     {
       image: "project2.png",
@@ -137,9 +138,9 @@ const Projects = () => {
     },
     {
       image: "project4.png",
-      name: "ShopSphere",
+      name: "Trendzy",
       description: "An e-commerce platform with cart and product pages.",
-      demoLink: "#",
+      demoLink: "https://trenddzy.netlify.app",
       githubLink: "https://github.com/aushah1/ShopSphere.git",
     },
     {

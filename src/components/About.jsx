@@ -63,23 +63,52 @@ const About = () => {
           </Name>
         </motion.div>
 
-        <motion.div className="info space-y-4" style={{ opacity: textOpacity }}>
-          <motion.p className="text-2xl font-semibold">
-            Do you know what’s the #1 Hack that Top Brands do?
+        <motion.div
+          className="info space-y-8 max-w-3xl"
+          style={{ opacity: textOpacity }}>
+          <motion.p className="text-xl  font-medium leading-relaxed text-gray-200">
+            I am Aushah, a frontend web developer who enjoys building
+            responsive, accessible, and user-friendly websites. I turn designs
+            into quick, interactive ones using HTML, CSS, JavaScript, React, and
+            Tailwind CSS.
           </motion.p>
 
-          <motion.ul className="list-disc text-lg">
-            <li>Apple Doesn't sell Phones, It Sells Status</li>
-            <li>Nike Doesn’t Shoes, It Sells Emotions</li>
-          </motion.ul>
+          <div className="space-y-4 bg-gray-900/40 p-6 rounded-xl border border-gray-800">
+            <motion.p className="text-lg font-semibold text-cyan-300">
+              Do you know what the #1 hack top brands use?
+            </motion.p>
 
-          <motion.p className="text-xl">
-            How are they Presenting their Brand?
-          </motion.p>
+            <motion.ul className="list-disc pl-8 space-y-2 text-md  font-medium">
+              <li className="flex items-start">
+                <span className="mr-2 text-cyan-400">•</span>
+                <span>
+                  Apple doesn't sell phones — it sells
+                  <span className="text-cyan-300">status</span>
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="mr-2 text-cyan-400">•</span>
+                <span>
+                  Nike doesn't sell footwear — it sells
+                  <span className="text-cyan-300">emotion</span>
+                </span>
+              </li>
+            </motion.ul>
 
-          <motion.p className="text-xl">
-            Through Creating Web sites that make customers happy about hitting
-            “Buy Now”.
+            <div className="space-y-2 pt-2">
+              <motion.p className="text-lg font-semibold text-gray-300">
+                And where do they position their brand?
+              </motion.p>
+
+              <motion.p className="text-lg leading-relaxed">
+                By using sites that get clients eager to click "Buy Now."
+              </motion.p>
+            </div>
+          </div>
+
+          <motion.p className="text-xl font-medium leading-relaxed bg-gradient-to-r from-cyan-500/10 to-blue-600/10 p-6 rounded-xl border border-cyan-500/30">
+            That's what good frontend development can do — and that's what I'm
+            dedicated to delivering in every project I undertake.
           </motion.p>
         </motion.div>
 
