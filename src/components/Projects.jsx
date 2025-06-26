@@ -222,6 +222,7 @@ const Projects = () => {
                   {project.demoLink && project.demoLink !== "#" ? (
                     <a
                       href={project.demoLink}
+                      target="_blank"
                       className="demo-btn px-10 py-4 rounded-full font-semibold text-white backdrop-blur-sm border-2 border-slate-700 transition-all duration-400 hover:scale-105 hover:shadow-blue">
                       View Site
                     </a>
