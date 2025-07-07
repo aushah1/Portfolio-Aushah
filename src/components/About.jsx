@@ -17,7 +17,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="flex w-full text-white lg:flex-row gap-10 flex-col justify-around items-center py-5 px-10 mt-32 overflow-hidden"
+      className="flex w-full text-white lg:flex-row gap-10 flex-col justify-around items-center py-5 px-10 mt-32 overflow-hidden relative"
       initial="hidden"
       animate="visible"
       variants={{
@@ -83,14 +83,14 @@ const About = () => {
                 <span className="mr-2 text-cyan-400">•</span>
                 <span>
                   Apple doesn't sell phones — it sells
-                  <span className="text-cyan-300">status</span>
+                  <span className="text-cyan-300"> status</span>
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2 text-cyan-400">•</span>
                 <span>
                   Nike doesn't sell footwear — it sells
-                  <span className="text-cyan-300">emotion</span>
+                  <span className="text-cyan-300"> emotion</span>
                 </span>
               </li>
             </motion.ul>
@@ -183,6 +183,28 @@ const About = () => {
             />
           ))}
         </div>
+      </motion.div>
+      <motion.div className="float">
+        <img
+          className="absolute top-1 right-10 w-28 sm:w-40 float-animation"
+          src="/astraunt.png"
+          alt=""
+        />
+        <img
+          className="absolute lg:block hidden top-36 right-72 w-40 float-animation"
+          src="/planet.png"
+          alt=""
+        />
+        <img
+          className="absolute lg:block hidden top-10 right-[40rem] w-40 float-animation"
+          src="/ufo.png"
+          alt=""
+        />
+        <img
+          className="absolute -bottom-9 right-56 sm:w-40 w-32  float-animation"
+          src="/astraunt2.png"
+          alt=""
+        />
       </motion.div>
     </motion.div>
   );

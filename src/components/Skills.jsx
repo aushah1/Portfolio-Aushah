@@ -95,6 +95,18 @@ const Skills = () => {
           <h1 className="font-founder text-8xl md:text-[13rem] relative translate-y-[50%]">
             SKILLS
           </h1>
+          <div className="floats">
+            <img
+              className="absolute md:top-10 top-32 w-32 md:right-10 right-20 float-animation"
+              src="/shape.png"
+              alt=""
+            />
+            <img
+              className="absolute invert md:top-32 top-44 w-32 md:left-10 left-20  float-animation"
+              src="/gear.png"
+              alt=""
+            />
+          </div>
         </div>
         <div id="center" className="relative w-full h-[790px] ">
           <div className="content absolute top-0 left-0 w-full h-full flex flex-col gap-10 items-center justify-center text-white translate-y-full">
@@ -263,6 +275,18 @@ const Skills = () => {
           <h1 className="font-founder text-8xl md:text-[13rem] relative -translate-y-[50%]">
             SKILLS
           </h1>
+          <div className="floats ">
+            <img
+              className="absolute md:bottom-10 bottom-20 w-48 md:right-10 right-16 float-animation"
+              src="/commet.png"
+              alt=""
+            />
+            <img
+              className="absolute md:top-32 top-28 w-32 md:left-10 left-20 float-animation"
+              src="/halos.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </>
