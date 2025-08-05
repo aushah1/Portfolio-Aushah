@@ -9,39 +9,28 @@ const Contact = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
-    setIsButtonDisabled(true);
+    setIsButtonDisabled(true); // Disable button on submit
 
     const formData = new FormData(event.target);
-    formData.append("access_key", "4ba5e60e-3cdc-4ef5-a032-b8c9641edc05");
+    formData.append("access_key", "5e6bc9dc-7f9d-4db7-9a34-59bded8813c5");
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      if (data.success) {
-        Swal.fire({
-          title: "Success",
-          text: "Message sent successfully",
-          icon: "success",
-        });
-        setResult("Form Submitted Successfully");
-        event.target.reset();
-      } else {
-        console.log("Error", data);
-        setResult(data.message);
-      }
-    } catch (error) {
-      console.error("Submission error:", error);
-      setResult("Failed to send message");
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      Swal.fire("Success!", "Your message has been sent.", "success");
+      event.target.reset();
+    } else {
+      Swal.fire("Error!", data.message || "Something went wrong.", "error");
+      setResult(data.message);
     }
 
-    setTimeout(() => {
-      setIsButtonDisabled(false);
-    }, 5000);
+    setIsButtonDisabled(false);
   };
 
   return (
