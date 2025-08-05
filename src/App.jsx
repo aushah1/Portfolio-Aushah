@@ -7,26 +7,31 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import { Nav } from "./components/Nav";
 import Contact from "./components/Contact";
+import Cursor from "./components/Cursor";
 import Footer from "./components/Footer";
 
 function App() {
   const navItems = [
     {
+      id: 1,
       name: "About",
       link: "#about",
       icon: "/about.gif",
     },
     {
+      id: 2,
       name: "Skills",
       link: "#main",
       icon: "/skill.gif",
     },
     {
+      id: 3,
       name: "Projects",
       link: "#projects",
       icon: "/project.gif",
     },
     {
+      id: 4,
       name: "Contact",
       link: "#contact",
       icon: "/chat.gif",
@@ -48,6 +53,7 @@ function App() {
       />
 
       <div className="relative z-10">
+        <Cursor />
         <Nav navItems={navItems} />
         <About />
         <TechStack />

@@ -88,10 +88,10 @@ const Skills = () => {
 
   return (
     <>
-      <div id="main" className=" relative w-full h-screen overflow-hidden ">
+      <div id="main" className=" relative w-full overflow-hidden ">
         <div
           id="top"
-          className="absolute top-0 w-full h-[50vh] opacity-80 bg-[#000112] flex items-end justify-center overflow-hidden z-[9]">
+          className="absolute top-0 w-full h-[61vh] opacity-80 bg-[#000112] flex items-end justify-center overflow-hidden z-[9]">
           <h1 className="font-founder text-8xl md:text-[13rem] relative translate-y-[50%]">
             SKILLS
           </h1>
@@ -108,7 +108,7 @@ const Skills = () => {
             />
           </div>
         </div>
-        <div id="center" className="relative w-full h-[790px] ">
+        <div id="center" className="relative w-full h-[1000px] ">
           <div className="content absolute top-0 left-0 w-full h-full flex flex-col gap-10 items-center justify-center text-white translate-y-full">
             <FuzzyText
               className="fuzzyText "
@@ -122,7 +122,7 @@ const Skills = () => {
               Professional Skills that helps you to present yourself in online
               world
             </h2>
-            <div className="container mx-auto place-items-center w-[92%] md:w-[70%] grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+            <div className="container mx-auto items-center w-[92%] md:w-[70%] justify-center flex flex-wrap gap-10">
               <Card
                 imageSrc="/html.png"
                 altText="HTML"
@@ -271,7 +271,7 @@ const Skills = () => {
         </div>
         <div
           id="bottom"
-          className="absolute bottom-0 opacity-85 bg-[#000112] w-full h-[50vh]  flex items-start justify-center overflow-hidden">
+          className="absolute bottom-0 opacity-85 bg-[#000112] w-full h-[61vh]  flex items-start justify-center overflow-hidden">
           <h1 className="font-founder text-8xl md:text-[13rem] relative -translate-y-[50%]">
             SKILLS
           </h1>

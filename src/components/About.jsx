@@ -121,7 +121,7 @@ const About = () => {
           <Pill
             img="/github.png"
             link="https://github.com/aushah1"
-            hoverEffect="glow"
+            hoverEffect="jump"
           />
           <Pill
             img="/linkedin.webp"

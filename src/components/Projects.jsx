@@ -200,7 +200,7 @@ const Projects = () => {
                         View Site
                       </a>
                     ) : (
-                      <span className="text-sm px-6 py-4 rounded-full font-semibold text-white border-2 border-slate-700 bg-black/30 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100">
+                      <span className="text-sm cursor-not-allowed px-6 py-4 rounded-full font-semibold text-white border-2 border-slate-700 bg-black/30 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100">
                         No Live Demo
                       </span>
                     )}
@@ -227,7 +227,7 @@ const Projects = () => {
                       View Site
                     </a>
                   ) : (
-                    <span className="text-sm px-10 py-4 rounded-full font-semibold text-white border-2 border-slate-700 bg-black/30">
+                    <span className="text-sm cursor-not-allowed  px-10 py-4 rounded-full font-semibold text-white border-2 border-slate-700 bg-black/30">
                       No Live Demo
                     </span>
                   )}

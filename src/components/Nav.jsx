@@ -138,11 +138,11 @@ export const Nav = ({ navItems, className }) => {
 
         {/* Desktop Navigation Items */}
         <div className="hidden sm:flex items-center space-x-4">
-          {navItems.map((navItem, idx) => {
+          {navItems.map((navItem) => {
             const isActive = currentPath === navItem.link;
             return (
               <motion.a
-                key={`link-${idx}`}
+                key={`link-${navItem.id}`}
                 href={navItem.link}
                 className={cn(
                   "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500",
@@ -225,11 +225,11 @@ export const Nav = ({ navItems, className }) => {
                     transition: { staggerChildren: 0.05, staggerDirection: -1 },
                   },
                 }}>
-                {navItems.map((navItem, idx) => {
+                {navItems.map((navItem) => {
                   const isActive = currentPath === navItem.link;
                   return (
                     <motion.a
-                      key={`mobile-link-${idx}`}
+                      key={`mobile-link-${navItem.id}`}
                       href={navItem.link}
                       onClick={() => setIsMenuOpen(false)}
                       className={cn(
