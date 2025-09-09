@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import About from "./components/About";
 import TechStack from "./components/TechStack";
@@ -9,8 +9,26 @@ import { Nav } from "./components/Nav";
 import Contact from "./components/Contact";
 import Cursor from "./components/Cursor";
 import Footer from "./components/Footer";
+import Lenis from "@studio-freight/lenis";
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, 
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
   const navItems = [
     {
       id: 1,
@@ -37,6 +55,7 @@ function App() {
       icon: "/chat.gif",
     },
   ];
+
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
       <Particles
