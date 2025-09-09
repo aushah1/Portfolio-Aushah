@@ -186,6 +186,7 @@ const Projects = () => {
             className="card absolute w-[450px] h-[350px] sm:w-[600px] sm:h-[400px] lg:w-[741px] lg:h-[550px] md:w-[650px] md:h-[480px] top-[60%] left-1/2 -translate-x-[250px] flex flex-col justify-center items-center gap-4 will-change-transform">
             <div className="card-img outline outline-1 outline-white outline-offset-[10px] relative overflow-hidden rounded-lg group">
               <img
+                loading="lazy"
                 src={project.image}
                 alt={project.name}
                 className="w-full h-full object-cover transition-all duration-500 ease-custom rounded-xl"

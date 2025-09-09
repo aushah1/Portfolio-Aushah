@@ -98,6 +98,7 @@ export default function Card({
           scale,
         }}>
         <motion.img
+          loading="lazy"
           src={imageSrc}
           alt={altText}
           className="absolute top-0 left-0 object-contain rounded-md will-change-transform [transform:translateZ(0)]"
