@@ -16,6 +16,7 @@ body {
   background-color: #000112;
   font-family: "Space Grotesk";
   color: white;
+  /* overflow-x: hidden; */
 }
 
 /* Robot.jsx */

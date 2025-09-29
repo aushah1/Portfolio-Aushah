@@ -57,7 +57,7 @@ function App() {
   ];
 
   return (
-    <div style={{ width: "100%", minHeight: "100vh" }}>
+    <div style={{ width: "100%", minHeight: "100vh" , overflowX: "hidden" }}>
       <Particles
         particleColors={["#ffffff", "#ffffff"]}
         particleCount={300}
