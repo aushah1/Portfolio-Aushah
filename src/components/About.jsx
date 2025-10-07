@@ -141,7 +141,7 @@ const About = () => {
           <div className="octagon-mask w-full h-full">
             <img
               className="w-full h-full object-cover"
-              src="/prof.png"
+              src="/photo2.webp"
               alt="Profile"
             />
           </div>
