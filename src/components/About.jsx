@@ -113,7 +113,7 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="flex gap-6"
+          className="flex gap-6 p-6"
           variants={{
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { delay: 0.5 } },
@@ -121,11 +121,6 @@ const About = () => {
           <Pill
             img="/github.png"
             link="https://github.com/aushah1"
-            hoverEffect="jump"
-          />
-          <Pill
-            img="/linkedin.webp"
-            link="https://linkedin.com/in/aushahgw"
             hoverEffect="jump"
           />
         </motion.div>
