@@ -179,28 +179,6 @@ const About = () => {
           ))}
         </div>
       </motion.div>
-      <motion.div className="float">
-        <img
-          className="absolute top-1 right-10 w-28 sm:w-40 float-animation"
-          src="/astraunt.png"
-          alt=""
-        />
-        <img
-          className="absolute lg:block hidden top-36 right-72 w-40 float-animation"
-          src="/planet.png"
-          alt=""
-        />
-        <img
-          className="absolute lg:block hidden top-10 right-[40rem] w-40 float-animation"
-          src="/ufo.png"
-          alt=""
-        />
-        <img
-          className="absolute -bottom-9 right-56 sm:w-40 w-32  float-animation"
-          src="/astraunt2.png"
-          alt=""
-        />
-      </motion.div>
     </motion.div>
   );
 };
