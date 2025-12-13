@@ -91,7 +91,7 @@ const Skills = () => {
       <div id="main" className=" relative w-full overflow-hidden ">
         <div
           id="top"
-          className="absolute top-0 w-full h-[61.66vh] opacity-80 bg-[#000112] flex items-end justify-center overflow-hidden z-[9]">
+          className="absolute top-0 w-full h-[68.66vh] opacity-80 bg-[#000112] flex items-end justify-center overflow-hidden z-[9]">
           <h1 className="font-founder text-8xl md:text-[13rem] relative translate-y-[50%]">
             SKILLS
           </h1>
@@ -271,7 +271,7 @@ const Skills = () => {
         </div>
         <div
           id="bottom"
-          className="absolute bottom-0 opacity-85 bg-[#000112] w-full h-[61.66vh]  flex items-start justify-center overflow-hidden">
+          className="absolute bottom-0 opacity-85 bg-[#000112] w-full h-[68.66vh]  flex items-start justify-center overflow-hidden">
           <h1 className="font-founder text-8xl md:text-[13rem] relative -translate-y-[50%]">
             SKILLS
           </h1>
