@@ -9,7 +9,14 @@ const Skills = () => {
   useEffect(() => {
     // Set initial states for animated elements
     gsap.set(".fuzzyText", { opacity: 0, scale: 0.8 });
-    gsap.set(".card", { opacity: 0, y: 40, rotation: -15, scale: 0.85 });
+    const isMobile = window.innerWidth < 768;
+
+    gsap.set(".card", {
+      opacity: 0,
+      y: isMobile ? 20 : 40,
+      rotation: isMobile ? 0 : -15,
+      scale: 0.9,
+    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -17,7 +24,7 @@ const Skills = () => {
         start: "top top",
         end: "+=150%",
         scrub: 1,
-        pin: true,
+        pin: window.innerWidth > 768,
         invalidateOnRefresh: true,
       },
     });
@@ -88,10 +95,10 @@ const Skills = () => {
 
   return (
     <>
-      <div id="main" className=" relative w-full overflow-hidden ">
+      <div id="main" className="relative w-full min-h-screen overflow-hidden">
         <div
           id="top"
-          className="absolute top-0 w-full h-[68.66vh] opacity-80 bg-[#000112] flex items-end justify-center overflow-hidden z-[9]">
+          className="absolute top-0 w-full h-1/2 opacity-80 bg-[#000112] flex items-end justify-center overflow-hidden z-[9]">
           <h1 className="font-founder text-8xl md:text-[13rem] relative translate-y-[50%]">
             SKILLS
           </h1>
@@ -108,7 +115,7 @@ const Skills = () => {
             />
           </div>
         </div>
-        <div id="center" className="relative w-full h-[1000px] ">
+        <div id="center" className="relative w-full h-[100vh] ">
           <div className="content absolute top-0 left-0 w-full h-full flex flex-col gap-10 items-center justify-center text-white translate-y-full">
             <FuzzyText
               className="fuzzyText "
@@ -122,7 +129,7 @@ const Skills = () => {
               Professional Skills that helps you to present yourself in online
               world
             </h2>
-            <div className="container mx-auto items-center w-[92%] md:w-[70%] justify-center flex flex-wrap gap-10">
+            <div className="mx-auto w-full md:w-2/3 px-4 flex flex-wrap justify-center md:gap-8 gap-6">
               <Card
                 imageSrc="/html.png"
                 altText="HTML"
@@ -266,12 +273,27 @@ const Skills = () => {
                 displayOverlayContent={true}
                 overlayContent={<p className="tilted-card-demo-text">Github</p>}
               />
+              <Card
+                imageSrc="/canva.png"
+                altText="Canva"
+                captionText="Canva"
+                containerHeight="120px"
+                containerWidth="120px"
+                imageHeight="120px"
+                imageWidth="120px"
+                rotateAmplitude={12}
+                scaleOnHover={1.2}
+                showMobileWarning={false}
+                showTooltip={true}
+                displayOverlayContent={true}
+                overlayContent={<p className="tilted-card-demo-text">Canva</p>}
+              />
             </div>
           </div>
         </div>
         <div
           id="bottom"
-          className="absolute bottom-0 opacity-85 bg-[#000112] w-full h-[68.66vh]  flex items-start justify-center overflow-hidden">
+          className="absolute bottom-0 opacity-85 bg-[#000112] w-full h-1/2  flex items-start justify-center overflow-hidden">
           <h1 className="font-founder text-8xl md:text-[13rem] relative -translate-y-[50%]">
             SKILLS
           </h1>

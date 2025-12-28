@@ -73,7 +73,7 @@ const Pill = ({ link, img, hoverEffect, ...props }) => {
 
   return (
     <div className=" h-24 overflow-hidden flex items-center justify-center ">
-      <div className="w-[20vmin] h-[20vmin] flex items-center justify-center relative">
+      <div className="w-[25vmin] h-[20vmin] flex items-center justify-center relative">
         <div
           className="pill-container w-[10vmin] h-[30vmin] flex flex-col items-center justify-center relative"
           onMouseEnter={() => setIsOpen(true)}
@@ -91,7 +91,7 @@ const Pill = ({ link, img, hoverEffect, ...props }) => {
             {/* GitHub Link */}
             <a
               href={link}
-              className="absolute w-[25px]   md:w-[25px]  bg-white rounded-full cursor-pointer transition-transform hover:scale-110"
+              className="absolute w-[35px]   md:w-[35px]  bg-white rounded-full cursor-pointer transition-transform hover:scale-110"
               target="_blank"
               rel="noopener noreferrer">
               <img src={img} alt="" className="w-full h-full object-cover" />
@@ -99,9 +99,9 @@ const Pill = ({ link, img, hoverEffect, ...props }) => {
           </div>
 
           {/* Pill Sections */}
-          <div className="pill-top w-8 h-9 md:w-9 md:h-10 bg-[#171717] border-2 border-white relative rounded-t-[6vmin] overflow-hidden" />
+          <div className="pill-top w-[4.5rem] h-9 md:w-20 md:h-10 bg-[#171717] border-2 border-white relative rounded-t-full overflow-hidden" />
           <div
-            className={`pill-bottom w-8 h-9 md:w-9 md:h-10 bg-[#171717] border-2 border-white mt-0 rounded-b-[6vmin] relative ${
+            className={`pill-bottom w-[4.5rem] h-9 md:w-20 md:h-10 bg-[#171717] border-2 border-white mt-0 rounded-b-full relative ${
               isOpen ? "open" : ""
             }`}
           />

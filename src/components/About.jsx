@@ -17,7 +17,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="flex w-full text-white lg:flex-row gap-10 flex-col justify-around items-center py-5 px-10 mt-32 overflow-hidden relative"
+      className="flex w-full text-white lg:flex-row gap-10 flex-col justify-center items-center py-5 px-10 mt-32 overflow-hidden relative"
       initial="hidden"
       animate="visible"
       variants={{
@@ -36,7 +36,7 @@ const About = () => {
           },
         }}>
         <motion.h1
-          className="text-5xl font-bold"
+          className="md:text-7xl text-4xl font-bold text-center"
           variants={{
             hidden: { scale: 0.5 },
             visible: { scale: 1 },
@@ -44,29 +44,33 @@ const About = () => {
           HEY, I'M
         </motion.h1>
 
-        <motion.div className="overflow-hidden" whileHover={{ scale: 1.05 }}>
+        <motion.div
+          className="overflow-hidden text-center flex items-center justify-center"
+          whileHover={{ scale: 1.05 }}>
           <RotatingText
             texts={["WEB DEVELOPER", "REACT DEVELOPER", "FRONTEND DEVELOPER"]}
-            mainClassName="text-5xl bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text "
+            mainClassName="md:text-6xl text-3xl text-center flex items-center justify-center bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text "
             staggerFrom="last"
             staggerDuration={0.02}
             transition={{ type: "spring", damping: 20, stiffness: 200 }}
           />
         </motion.div>
 
-        <motion.div className="relative" whileHover={{ scale: 1.02 }}>
+        <motion.div
+          className="relative text-center flex items-center justify-center"
+          whileHover={{ scale: 1.02 }}>
           <Name
             colors={["#40ffaa", "#4079ff", "#ff40f5"]}
             animationSpeed={2}
-            className="text-6xl drop-shadow-lg">
+            className="md:text-8xl text-5xl drop-shadow-lg text-center">
             AUSHAH GOWHAR
           </Name>
         </motion.div>
 
         <motion.div
-          className="info space-y-8 max-w-3xl"
+          className="info space-y-8 max-w-3xl mt-10"
           style={{ opacity: textOpacity }}>
-          <motion.p className="text-xl  font-medium leading-relaxed text-gray-200">
+          <motion.p className="md:text-xl sm:text-base text-sm font-medium leading-relaxed text-gray-200">
             I am Aushah, a frontend web developer who enjoys building
             responsive, accessible, and user-friendly websites. I turn designs
             into quick, interactive ones using HTML, CSS, JavaScript, React, and
@@ -74,11 +78,11 @@ const About = () => {
           </motion.p>
 
           <div className="space-y-4 bg-gray-900/40 p-6 rounded-xl border border-gray-800">
-            <motion.p className="text-lg font-semibold text-cyan-300">
+            <motion.p className="md:text-lg  sm:text-base text-sm font-semibold text-cyan-300">
               Do you know what the #1 hack top brands use?
             </motion.p>
 
-            <motion.ul className="list-disc pl-8 space-y-2 text-md  font-medium">
+            <motion.ul className="list-disc pl-8 space-y-2 md:text-base  sm:text-sm text-xs  font-medium">
               <li className="flex items-start">
                 <span className="mr-2 text-cyan-400">•</span>
                 <span>
@@ -96,41 +100,51 @@ const About = () => {
             </motion.ul>
 
             <div className="space-y-2 pt-2">
-              <motion.p className="text-lg font-semibold text-gray-300">
+              <motion.p className="md:text-lg  sm:text-base text-sm font-semibold text-gray-300">
                 And where do they position their brand?
               </motion.p>
 
-              <motion.p className="text-lg leading-relaxed">
+              <motion.p className="md:text-lg  sm:text-base text-sm leading-relaxed">
                 By using sites that get clients eager to click "Buy Now."
               </motion.p>
             </div>
           </div>
 
-          <motion.p className="text-xl font-medium leading-relaxed bg-gradient-to-r from-cyan-500/10 to-blue-600/10 p-6 rounded-xl border border-cyan-500/30">
+          <motion.p className="md:text-xl  sm:text-base text-sm font-medium leading-relaxed bg-gradient-to-r from-cyan-500/10 to-blue-600/10 p-6 rounded-xl border border-cyan-500/30">
             That's what good frontend development can do — and that's what I'm
             dedicated to delivering in every project I undertake.
           </motion.p>
         </motion.div>
+        <div className="flex flex-col gap-4">
+          <p className="text-base text-gray-400 uppercase tracking-wide">
+            Connect with me
+          </p>
 
-        <motion.div
-          className="flex gap-6 p-6"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { delay: 0.5 } },
-          }}>
-          <Pill
-            img="/github.png"
-            link="https://github.com/aushah1"
-            hoverEffect="jump"
-          />
-        </motion.div>
+          <motion.div
+            className="flex gap-6 p-6"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { delay: 0.5 } },
+            }}>
+            <Pill
+              img="/github.png"
+              link="https://github.com/aushah1"
+              hoverEffect="jump"
+            />
+            <Pill
+              img="/linkedin.webp"
+              link="https://www.linkedin.com/in/aushahgw"
+              hoverEffect="jump"
+            />
+          </motion.div>
+        </div>
       </motion.div>
 
       {/* Right Column */}
-      <motion.div
+      {/* <motion.div
         className="relative flex items-center justify-center w-[400px] h-[480px]"
-        style={{ scale: photoScale }}>
-        <motion.div
+        style={{ scale: photoScale }}> */}
+      {/* <motion.div
           className="photo w-80 h-80 md:w-96 md:h-96 overflow-hidden"
           variants={photoVariants}>
           <div className="octagon-mask w-full h-full">
@@ -140,9 +154,9 @@ const About = () => {
               alt="Profile"
             />
           </div>
-        </motion.div>
+        </motion.div> */}
 
-        <motion.button
+      {/* <motion.button
           onClick={() => (window.location.href = "mailto:aushah.gw@gmail.com")}
           className="absolute z-10 -bottom-8 -right-8"
           whileHover={{ scale: 1.1, rotate: 360 }}
@@ -153,10 +167,10 @@ const About = () => {
             className="text-cyan-400 hover:text-blue-400 transition-colors"
             characterStyle={{ fontWeight: 700 }}
           />
-        </motion.button>
+        </motion.button> */}
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden">
+      {/* Floating Particles */}
+      {/* <div className="absolute inset-0 overflow-hidden">
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
@@ -177,8 +191,8 @@ const About = () => {
               }}
             />
           ))}
-        </div>
-      </motion.div>
+        </div> */}
+      {/* </motion.div> */}
     </motion.div>
   );
 };

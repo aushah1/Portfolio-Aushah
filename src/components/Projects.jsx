@@ -124,17 +124,17 @@ const Projects = () => {
     },
     {
       image: "project2.png",
-      name: "Solstice",
-      description: "A music player built using plain HTML, CSS and JavaScript",
-      demoLink: "#",
-      githubLink: "https://github.com/aushah1/Solstice.git",
+      name: "SecuKey",
+      description: "A password manager to save all your passwords.",
+      demoLink: "https://secu-key.vercel.app",
+      githubLink: "https://github.com/aushah1/SecuKey.git",
     },
     {
       image: "project3.png",
-      name: "Sidcup Family Golf Clone",
-      description: "A web clone of Sidcup Family Golf's official website.",
-      demoLink: "https://aushah1.github.io/Sidcup-Family-Golf-Clone/",
-      githubLink: "https://github.com/aushah1/Sidcup-Family-Golf-Clone.git",
+      name: "Online Chess Game",
+      description: "A multiplayer Chess game where playesrs can play with each other.",
+      demoLink: "https://chess-gameplay.vercel.app",
+      githubLink: "https://github.com/aushah1/Chess-game.git",
     },
     {
       image: "project4.png",
@@ -145,10 +145,10 @@ const Projects = () => {
     },
     {
       image: "project5.png",
-      name: "Twitter Clone",
-      description: "A Twitter-inspired social media platform.",
-      demoLink: "https://aushah1.github.io/Twitter-Clone/",
-      githubLink: "https://github.com/aushah1/Twitter-Clone.git",
+      name: "Stysei",
+      description: "A platform where stdents can study productively",
+      demoLink: "https://stysei.vercel.app",
+      githubLink: "https://github.com/aushah1/Stysei.git",
     },
   ];
 
