@@ -132,7 +132,8 @@ const Projects = () => {
     {
       image: "project3.png",
       name: "Online Chess Game",
-      description: "A multiplayer Chess game where playesrs can play with each other.",
+      description:
+        "A multiplayer Chess game where playesrs can play with each other.",
       demoLink: "https://chess-gameplay.vercel.app",
       githubLink: "https://github.com/aushah1/Chess-game.git",
     },
@@ -145,10 +146,11 @@ const Projects = () => {
     },
     {
       image: "project5.png",
-      name: "Stysei",
-      description: "A platform where stdents can study productively",
-      demoLink: "https://stysei.vercel.app",
-      githubLink: "https://github.com/aushah1/Stysei.git",
+      name: "Sidcup Golf Experience",
+      description:
+        "A pixel accurate recreation of the Sidcup Family Golf website focusing on layout, interactivity, and responsiveness. ",
+      demoLink: "https://aushah1.github.io/Sidcup-Golf/",
+      githubLink: "https://github.com/aushah1/Sidcup-Golf.git",
     },
   ];
 

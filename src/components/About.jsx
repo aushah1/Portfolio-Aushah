@@ -136,6 +136,11 @@ const About = () => {
               link="https://www.linkedin.com/in/aushahgw"
               hoverEffect="jump"
             />
+            <Pill
+              img="/resume.png"
+              link="https://drive.google.com/file/d/1wJEfsSgbri8D6bMxQGU2fjiLFTehiK40/view?usp=sharing"
+              hoverEffect="jump"
+            />
           </motion.div>
         </div>
       </motion.div>

@@ -88,10 +88,10 @@ const Pill = ({ link, img, hoverEffect, ...props }) => {
               />
             ))}
 
-            {/* GitHub Link */}
+            {/* Link */}
             <a
               href={link}
-              className="absolute w-[35px]   md:w-[35px]  bg-white rounded-full cursor-pointer transition-transform hover:scale-110"
+              className="absolute w-[35px]  md:w-[35px]   rounded-full cursor-pointer transition-transform hover:scale-110"
               target="_blank"
               rel="noopener noreferrer">
               <img src={img} alt="" className="w-full h-full object-cover" />
