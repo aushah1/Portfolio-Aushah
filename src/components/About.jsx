@@ -130,16 +130,19 @@ const About = () => {
               img="/github.png"
               link="https://github.com/aushah1"
               hoverEffect="jump"
+              name="Github"
             />
             <Pill
               img="/linkedin.webp"
               link="https://www.linkedin.com/in/aushahgw"
               hoverEffect="jump"
+              name="Linkedin"
             />
             <Pill
               img="/resume.png"
               link="https://drive.google.com/file/d/1wJEfsSgbri8D6bMxQGU2fjiLFTehiK40/view?usp=sharing"
               hoverEffect="jump"
+              name="Resume"
             />
           </motion.div>
         </div>

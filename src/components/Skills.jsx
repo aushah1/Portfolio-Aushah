@@ -95,7 +95,9 @@ const Skills = () => {
 
   return (
     <>
-      <div id="main" className="relative w-full min-h-screen overflow-hidden">
+      <div
+        id="main"
+        className="relative w-full min-h-screen h-[140vh] overflow-hidden">
         <div
           id="top"
           className="absolute top-0 w-full h-1/2 opacity-80 bg-[#000112] flex items-end justify-center overflow-hidden z-[9]">
@@ -115,7 +117,7 @@ const Skills = () => {
             />
           </div>
         </div>
-        <div id="center" className="relative w-full  ">
+        <div id="center" className="relative w-full h-[140vh] ">
           <div className="content absolute top-0 left-0 w-full h-full flex flex-col gap-10 items-center justify-center text-white translate-y-full">
             <FuzzyText
               className="fuzzyText "

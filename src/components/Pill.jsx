@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Pill = ({ link, img, hoverEffect, ...props }) => {
+const Pill = ({ link, img, hoverEffect, name, ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
   const particles = Array.from({ length: 10 }, (_, i) => i); // Reduced to 10 particles
 
@@ -72,8 +72,8 @@ const Pill = ({ link, img, hoverEffect, ...props }) => {
   };
 
   return (
-    <div className=" h-24 overflow-hidden flex items-center justify-center ">
-      <div className="w-[25vmin] h-[20vmin] flex items-center justify-center relative">
+    <div className="overflow-hidden flex items-center justify-center ">
+      <div className="w-[25vmin] h-[25svmin] flex items-center justify-center flex-col gap-2 relative">
         <div
           className="pill-container w-[10vmin] h-[30vmin] flex flex-col items-center justify-center relative"
           onMouseEnter={() => setIsOpen(true)}
@@ -106,6 +106,7 @@ const Pill = ({ link, img, hoverEffect, ...props }) => {
             }`}
           />
         </div>
+        <div className="text">{name}</div>
       </div>
     </div>
   );

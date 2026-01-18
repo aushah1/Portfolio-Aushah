@@ -49,7 +49,7 @@ const Contact = () => {
           minFontSize={12}
         />
       </h1>
-      <div className="form mx-auto lg:w-1/2 w-3/4 border border-white p-4 rounded-2xl mt-10">
+      <div className="form mx-auto lg:w-1/2 w-[90%] border border-white p-4 rounded-2xl mt-10">
         <form onSubmit={onSubmit} className="w-full p-5 md:p-10" id="form">
           <p className="text-gray-100 font-bold text-xl mb-2">Let's connect!</p>
           <input
