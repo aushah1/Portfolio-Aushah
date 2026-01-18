@@ -68,9 +68,9 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="info space-y-8 max-w-3xl mt-10"
+          className="info space-y-8 max-w-3xl mt-10 px-3"
           style={{ opacity: textOpacity }}>
-          <motion.p className="md:text-xl sm:text-base text-sm font-medium leading-relaxed text-gray-200">
+          <motion.p className="md:text-xl sm:text-base text-xs font-medium leading-relaxed text-gray-200 p-2">
             I am Aushah, a frontend web developer who enjoys building
             responsive, accessible, and user-friendly websites. I turn designs
             into quick, interactive ones using HTML, CSS, JavaScript, React, and
@@ -82,7 +82,7 @@ const About = () => {
               Do you know what the #1 hack top brands use?
             </motion.p>
 
-            <motion.ul className="list-disc pl-8 space-y-2 md:text-base  sm:text-sm text-xs  font-medium">
+            <motion.ul className="list-disc md:pl-8 sm:pl-4 pl-1 space-y-2 md:text-base  sm:text-sm text-xs  font-medium">
               <li className="flex items-start">
                 <span className="mr-2 text-cyan-400">•</span>
                 <span>
@@ -116,7 +116,7 @@ const About = () => {
           </motion.p>
         </motion.div>
         <div className="flex flex-col gap-4">
-          <p className="text-base text-gray-400 uppercase tracking-wide">
+          <p className="text-base text-gray-400 uppercase tracking-wide px-4">
             Connect with me
           </p>
 

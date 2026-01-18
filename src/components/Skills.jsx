@@ -41,7 +41,7 @@ const Skills = () => {
           ease: "back.out(2.5)",
           duration: 0.8,
         },
-        0.3
+        0.3,
       )
       .to(
         ".card",
@@ -57,7 +57,7 @@ const Skills = () => {
           ease: "power4.out",
           duration: 0.8,
         },
-        0.7
+        0.7,
       );
 
     // Add subtle rotation to cards on hover
@@ -72,10 +72,10 @@ const Skills = () => {
       });
 
       card.addEventListener("mouseenter", () =>
-        gsap.to(card, { timeScale: 1 }).play()
+        gsap.to(card, { timeScale: 1 }).play(),
       );
       card.addEventListener("mouseleave", () =>
-        gsap.to(card, { timeScale: 3 }).reverse()
+        gsap.to(card, { timeScale: 3 }).reverse(),
       );
     });
 
@@ -115,7 +115,7 @@ const Skills = () => {
             />
           </div>
         </div>
-        <div id="center" className="relative w-full h-[100vh] ">
+        <div id="center" className="relative w-full  ">
           <div className="content absolute top-0 left-0 w-full h-full flex flex-col gap-10 items-center justify-center text-white translate-y-full">
             <FuzzyText
               className="fuzzyText "
@@ -129,7 +129,7 @@ const Skills = () => {
               Professional Skills that helps you to present yourself in online
               world
             </h2>
-            <div className="mx-auto w-full md:w-2/3 px-4 flex flex-wrap justify-center md:gap-8 gap-6">
+            <div className="mx-auto w-full md:w-2/3 px-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 place-items-center">
               <Card
                 imageSrc="/html.png"
                 altText="HTML"

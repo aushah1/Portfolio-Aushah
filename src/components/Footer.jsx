@@ -10,7 +10,7 @@ const Footer = () => {
   };
   return (
     <>
-      <div className="w-full text-white bg-transparent flex justify-between items-center text-sm lg:text-3xl px-3 md:px-10 py-5 mt-10 z-0">
+      <div className="w-full text-white bg-transparent flex justify-between items-center md:text-sm text-xs lg:text-3xl px-3 md:px-10 py-5 mt-10 z-0">
         <div className="text ">
           {" "}
           &copy; . AUSHAH GOWHAR . ALL RIGHTS RESERVED
