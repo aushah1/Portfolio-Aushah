@@ -73,7 +73,7 @@ const Pill = ({ link, img, hoverEffect, name, ...props }) => {
 
   return (
     <div className="overflow-hidden flex items-center justify-center ">
-      <div className="w-[25vmin] h-[25svmin] flex items-center justify-center flex-col gap-2 relative">
+      <div className="w-[25vmin] h-[25vmin] flex items-center justify-center flex-col gap-2 relative">
         <div
           className="pill-container w-[10vmin] h-[30vmin] flex flex-col items-center justify-center relative"
           onMouseEnter={() => setIsOpen(true)}
