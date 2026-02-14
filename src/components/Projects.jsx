@@ -134,7 +134,7 @@ const Projects = () => {
       name: "Online Chess Game",
       description:
         "A multiplayer Chess game where playesrs can play with each other.",
-      demoLink: "https://chess-gameplay.vercel.app",
+      demoLink: "https://chess-game-o016.onrender.com",
       githubLink: "https://github.com/aushah1/Chess-game.git",
     },
     {
