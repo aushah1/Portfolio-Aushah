@@ -116,41 +116,43 @@ const Projects = () => {
   const projectsData = [
     {
       image: "project1.png",
-      name: "patreon website",
+      name: "Capstone",
       description:
-        "FundAura is a Patreon-based platform I created to connect with supporters.",
+        "A browser based cloud development environment inspired by modern IDEs. It features an AI powered chat assistant, integrated terminal, file explorer, code editor, and live preview, allowing developers to write, execute, and manage projects seamlessly from a single workspace.",
+      demoLink: "#",
+      githubLink: "https://github.com/aushah1/capstone",
+    },
+    {
+      image: "project2.png",
+      name: "AI Combat",
+      description:
+        "An interactive AI comparison platform where users submit a single prompt and two different AI models generate responses simultaneously. A third AI model then acts as an impartial judge, evaluating both responses for accuracy, reasoning, clarity, and relevance. It assigns detailed scores to each model, declares the winner, and helps users compare the strengths and weaknesses of different AI models in a fair and engaging way.",
+      demoLink: "https://ai-combat-battle.onrender.com/",
+      githubLink: "https://github.com/aushah1/Ai-battle-arena",
+    },
+    {
+      image: "project3.png",
+      name: "Patreon",
+      description:
+        "A full stack creator support platform where fans can financially support their favorite creators through secure contributions. It includes user authentication, creator profiles, supporter management, and a clean dashboard for tracking donations and engagement.",
       demoLink: "#",
       githubLink: "https://github.com/aushah1/FundAura",
     },
     {
-      image: "project2.png",
-      name: "SecuKey",
-      description: "A password manager to save all your passwords.",
-      demoLink: "https://secu-key.vercel.app",
-      githubLink: "https://github.com/aushah1/SecuKey.git",
-    },
-    {
-      image: "project3.png",
-      name: "Online Chess Game",
-      description:
-        "A multiplayer Chess game where playesrs can play with each other.",
-      demoLink: "https://chess-game-o016.onrender.com",
-      githubLink: "https://github.com/aushah1/Chess-game.git",
-    },
-    {
       image: "project4.png",
-      name: "Trendzy",
-      description: "An e-commerce platform with cart and product pages.",
-      demoLink: "https://trenddzy.netlify.app",
-      githubLink: "https://github.com/aushah1/ShopSphere.git",
+      name: "Secukey",
+      description:
+        "A secure password manager built to safely store and organize login credentials in one place. It provides encrypted password storage, quick search functionality, an intuitive interface, and easy access to saved credentials while prioritizing user security and convenience.",
+      demoLink: "https://secu-key.vercel.app",
+      githubLink: "https://github.com/aushah1/SecuKey",
     },
     {
       image: "project5.png",
-      name: "Sidcup Golf Experience",
+      name: "Chess",
       description:
-        "A pixel accurate recreation of the Sidcup Family Golf website focusing on layout, interactivity, and responsiveness. ",
-      demoLink: "https://aushah1.github.io/Sidcup-Golf/",
-      githubLink: "https://github.com/aushah1/Sidcup-Golf.git",
+        "A real time multiplayer chess application that allows players to compete online with synchronized gameplay and smooth interactions. It features live move updates, game state synchronization, responsive design, and an engaging interface for a seamless multiplayer chess experience.",
+      demoLink: "https://chess-gameplay.vercel.app",
+      githubLink: "https://github.com/aushah1/Chess-game",
     },
   ];
 
@@ -218,7 +220,9 @@ const Projects = () => {
 
             <div className="details flex text-white flex-col gap-5 justify-center items-center">
               <h3 className="text-white text-xl font-bold">{project.name}</h3>
-              <p className="text-sm text-gray-300">{project.description}</p>
+              <p className="text-sm text-gray-300 text-center">
+                {project.description}
+              </p>
               <div className="button-container flex flex-col gap-2 items-center lg:hidden ">
                 <div className="flex gap-6 mt-3">
                   {project.demoLink && project.demoLink !== "#" ? (

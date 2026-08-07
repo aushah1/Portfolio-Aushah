@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Pill = ({ link, img, hoverEffect, name, ...props }) => {
+const Pill = ({ link, img, name }) => {
   const [isOpen, setIsOpen] = useState(false);
   const particles = Array.from({ length: 10 }, (_, i) => i); // Reduced to 10 particles
 
