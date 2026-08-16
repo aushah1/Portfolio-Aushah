@@ -48,7 +48,7 @@ const About = () => {
           className="overflow-hidden text-center flex items-center justify-center"
           whileHover={{ scale: 1.05 }}>
           <RotatingText
-            texts={["WEB DEVELOPER", "REACT DEVELOPER", "FRONTEND DEVELOPER"]}
+            texts={["WEB DEVELOPER", "REACT DEVELOPER", "MERN STACK DEVELOPER"]}
             mainClassName="md:text-6xl text-3xl text-center flex items-center justify-center bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text "
             staggerFrom="last"
             staggerDuration={0.02}
@@ -71,10 +71,10 @@ const About = () => {
           className="info space-y-8 max-w-3xl mt-10 px-3"
           style={{ opacity: textOpacity }}>
           <motion.p className="md:text-xl sm:text-base text-xs font-medium leading-relaxed text-gray-200 p-2">
-            I am Aushah, a frontend web developer who enjoys building
-            responsive, accessible, and user-friendly websites. I turn designs
-            into quick, interactive ones using HTML, CSS, JavaScript, React, and
-            Tailwind CSS.
+            I’m Aushah, a full stack developer who enjoys building responsive,
+            accessible, and user friendly web applications. I turn ideas and
+            designs into fast, interactive products using HTML, CSS, JavaScript,
+            React, Tailwind CSS, Node.js, Express, and MongoDB.
           </motion.p>
 
           <div className="space-y-4 bg-gray-900/40 p-6 rounded-xl border border-gray-800">
@@ -101,18 +101,20 @@ const About = () => {
 
             <div className="space-y-2 pt-2">
               <motion.p className="md:text-lg  sm:text-base text-sm font-semibold text-gray-300">
-                And where do they position their brand?
+                And where do they create that experience?
               </motion.p>
 
               <motion.p className="md:text-lg  sm:text-base text-sm leading-relaxed">
-                By using sites that get clients eager to click "Buy Now."
+                Through digital products that make people want to explore,
+                trust, and click “Buy Now.”{" "}
               </motion.p>
             </div>
           </div>
 
           <motion.p className="md:text-xl  sm:text-base text-sm font-medium leading-relaxed bg-gradient-to-r from-cyan-500/10 to-blue-600/10 p-6 rounded-xl border border-cyan-500/30">
-            That's what good frontend development can do — and that's what I'm
-            dedicated to delivering in every project I undertake.
+            That’s what good development can do — and that’s what I’m dedicated
+            to building: products that don’t just work, but actually make an
+            impact.
           </motion.p>
         </motion.div>
         <div className="flex flex-col gap-4">

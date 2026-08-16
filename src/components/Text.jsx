@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 const Text = ({
   text = "Compressa",
-  fontFamily = "Compressa VF",
-  // This font is just an example, you should not use it in commercial projects.
-  fontUrl = "https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2",
+  fontFamily = "Amstelvar VF",
+  fontUrl = "https://mdn.github.io/shared-assets/fonts/variable-fonts/AmstelvarAlpha-VF.woff2",
 
   width = true,
   weight = true,
@@ -58,7 +57,7 @@ const Text = ({
     window.addEventListener("touchmove", handleTouchMove, { passive: false });
 
     if (containerRef.current) {
-      const { left, top,width , height } =
+      const { left, top, width, height } =
         containerRef.current.getBoundingClientRect();
       mouseRef.current.x = left + width / 2;
       mouseRef.current.y = top + height / 2;
@@ -129,8 +128,8 @@ const Text = ({
             return Math.max(minVal, val + minVal);
           };
 
-          const wdth = width ? Math.floor(getAttr(d, 5, 200)) : 100;
-          const wght = weight ? Math.floor(getAttr(d, 100, 900)) : 400;
+         const wdth = width ? Math.floor(getAttr(d, 90, 130)) : 100;   //  (d, 5, 200)
+const wght = weight ? Math.floor(getAttr(d, 350, 700)) : 400; //  (d, 100, 900)
           const italVal = italic ? getAttr(d, 0, 1).toFixed(2) : 0;
           const alphaVal = alpha ? getAttr(d, 0, 1).toFixed(2) : 1;
 
@@ -151,11 +150,12 @@ const Text = ({
       ref={containerRef}
       className="relative w-full h-full overflow-hidden bg-transparent">
       <style>{`
-        @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
-          font-style: normal;
-        }
+       @font-face {
+    font-family: '${fontFamily}';
+    src: url('${fontUrl}') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+  }
         .stroke span {
           position: relative;
           color: ${textColor};
